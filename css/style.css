@@ -3,7 +3,7 @@
    Brand Design System matching Official Logo (Plum Purple, Rose Pink, Mint & Gold)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap');
 
 :root {
   /* Brand Palette Extracted Directly From Logo */
@@ -36,9 +36,9 @@
   --color-text-muted: #674E61;     /* Soft Muted Plum Grey */
   --color-border: #EDDCE8;         /* Subtle Brand Border */
 
-  /* Modern Premium Aesthetic Typography System */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography System - Roboto (from Digital Scholar) */
+  --font-heading: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: var(--font-heading);
   --font-sans: var(--font-body);
   --font-tamil: 'Noto Sans Tamil', var(--font-body);
@@ -491,10 +491,10 @@ h1, h2, h3, h4, h5 {
 .hero-title {
   font-family: var(--font-heading);
   font-size: clamp(2.4rem, 4.4vw, 3.8rem);
-  font-weight: 800;
-  line-height: 1.12;
+  font-weight: 900;
+  line-height: 1.15;
   margin-bottom: 20px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.015em;
   color: var(--color-plum);
 }
 
