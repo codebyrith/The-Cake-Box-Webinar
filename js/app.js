@@ -322,30 +322,29 @@ function initMobileMenu() {
 
   if (!toggleBtn || !navLinks) return;
 
-  toggleBtn.addEventListener('click', () => {
-    if (navLinks.style.display === 'flex') {
-      navLinks.style.display = 'none';
-    } else {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '78px';
-      navLinks.style.left = '0';
-      navLinks.style.width = '100%';
-      navLinks.style.background = '#FFF';
-      navLinks.style.padding = '24px';
-      navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-      navLinks.style.borderBottom = '1px solid #E8DCCF';
-    }
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isActive = navLinks.classList.toggle('active');
+    toggleBtn.innerHTML = isActive ? '✕' : '☰';
+    toggleBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
   });
 
   // Close mobile nav when clicking a link
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-      }
+      navLinks.classList.remove('active');
+      toggleBtn.innerHTML = '☰';
+      toggleBtn.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      navLinks.classList.remove('active');
+      toggleBtn.innerHTML = '☰';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 

@@ -2275,15 +2275,25 @@ h1, h2, h3, h4, h5 {
   border-radius: var(--radius-lg);
 }
 
-/* Responsive */
+/* ==========================================================================
+   Comprehensive Responsive System (Mobile, Tablet & Desktop)
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops (<= 1024px) */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
+  }
+
+  .hero-visual-card {
+    max-width: 650px;
+    margin: 0 auto;
   }
 
   .webinar-spec-strip {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .stats-grid {
@@ -2297,11 +2307,18 @@ h1, h2, h3, h4, h5 {
 
   .mentor-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
+  }
+
+  .mentor-portrait-card {
+    max-width: 440px;
+    margin: 0 auto;
   }
 
   .pricing-grid {
     grid-template-columns: 1fr;
+    max-width: 650px;
+    margin: 0 auto;
   }
 
   .business-grid {
@@ -2309,68 +2326,606 @@ h1, h2, h3, h4, h5 {
     gap: 36px;
   }
 
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 
   .certificate-spotlight {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cert-image-frame {
+    max-width: 480px;
+    margin: 0 auto;
   }
 }
 
+/* Mobile & Small Tablets (<= 768px) */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
   }
 
-  .mobile-toggle {
-    display: block;
+  body {
+    padding-bottom: 68px;
   }
 
-  .hero-title {
-    font-size: 2.1rem;
+  /* Prevent auto-zoom on mobile form focus */
+  input, select, textarea {
+    font-size: 16px !important;
   }
 
-  .comparison-grid {
-    grid-template-columns: 1fr;
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
+  .section {
+    padding: 56px 0;
   }
 
-  .reviews-grid {
-    grid-template-columns: 1fr;
+  .section-header {
+    margin-bottom: 32px;
   }
 
-  .webinar-spec-strip {
-    grid-template-columns: 1fr;
+  .section-title {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Top Bar */
+  .top-bar {
+    padding: 8px 0;
   }
 
   .top-bar-content {
-    justify-content: center;
+    flex-direction: column;
     text-align: center;
+    gap: 6px;
+  }
+
+  .top-bar-notice {
+    font-size: 0.78rem;
+    justify-content: center;
+    line-height: 1.4;
+  }
+
+  .top-bar-timer {
+    font-size: 0.78rem;
+    justify-content: center;
+  }
+
+  .countdown-box {
+    font-size: 0.82rem;
+    padding: 2px 6px;
+  }
+
+  .top-bar-contact {
+    font-size: 0.78rem;
+    justify-content: center;
+  }
+
+  /* Header & Mobile Drawer */
+  .navbar {
+    height: 68px;
+  }
+
+  .brand-logo-img {
+    height: 44px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .brand-sub {
+    font-size: 0.66rem;
+    letter-spacing: 0.8px;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--color-plum-soft);
+    color: var(--color-plum);
+    border: 1px solid var(--color-border);
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 20px 20px 26px 20px;
+    gap: 8px;
+    border-bottom: 2px solid var(--color-pink-border);
+    box-shadow: 0 16px 36px rgba(53, 18, 47, 0.16);
+    transform: translateY(-130%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    z-index: 99;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-item a {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-plum);
+    padding: 10px 14px;
+    display: block;
+    border-radius: 8px;
+    transition: background var(--transition-fast);
+  }
+
+  .nav-item a:hover {
+    background: var(--color-plum-soft);
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 38px 0 46px 0;
+  }
+
+  .hero-badge-wrap {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .badge {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .hero-hook {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .hero-pills {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .hero-pill-item {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .webinar-spec-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px 14px;
+    margin-bottom: 24px;
+  }
+
+  .spec-cell {
+    gap: 8px;
+  }
+
+  .spec-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .spec-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .spec-label {
+    font-size: 0.72rem;
+  }
+
+  .spec-value {
+    font-size: 0.84rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-guarantee {
+    font-size: 0.78rem;
+    text-align: left;
+  }
+
+  .hero-price-tag {
+    top: 12px;
+    right: 12px;
+    padding: 8px 14px;
+  }
+
+  .price-tag-sub {
+    font-size: 0.6rem;
+  }
+
+  .price-tag-val {
+    font-size: 1.15rem;
+  }
+
+  /* Comparison */
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Modules Section */
+  .curriculum-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 4px 12px 4px;
+    justify-content: flex-start;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+
+  .curriculum-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .module-header {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .module-meta-left {
+    gap: 12px;
+  }
+
+  .module-number-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  .module-title-wrap h3 {
+    font-size: 1.05rem;
+  }
+
+  .module-recipe-count {
+    font-size: 0.76rem;
+  }
+
+  .module-tag-chip {
+    display: none; /* Hide on mobile headers to prevent wrapping */
+  }
+
+  .accordion-chevron {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .module-body-inner {
+    padding: 16px;
+  }
+
+  .recipes-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .recipe-item {
+    font-size: 0.86rem;
+    padding: 10px 12px;
+  }
+
+  .module-footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .module-single-enquire-btn {
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Mentor Section */
+  .mentor-portrait-card {
+    max-width: 340px;
+  }
+
+  .mentor-experience-badge {
+    bottom: 12px;
+    right: 12px;
+    padding: 10px 16px;
+    border-radius: 12px;
+  }
+
+  .badge-big-num {
+    font-size: 1.6rem;
+  }
+
+  .badge-big-sub {
+    font-size: 0.68rem;
+  }
+
+  .brand-story-box {
+    padding: 20px;
+  }
+
+  /* Benefits */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .benefit-card {
+    padding: 20px;
+  }
+
+  /* Equipment Tabs */
+  .equipment-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .equipment-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  .equipment-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .equipment-card {
+    padding: 16px;
+  }
+
+  /* Pricing */
+  .pricing-card {
+    padding: 24px 18px;
+  }
+
+  .price-amount {
+    font-size: 2.8rem;
+  }
+
+  .price-original {
+    font-size: 1.15rem;
+  }
+
+  .pricing-bonuses-box {
+    padding: 14px;
+  }
+
+  .bonus-pill {
+    font-size: 0.82rem;
+  }
+
+  /* Reviews */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .review-card {
+    padding: 20px;
+  }
+
+  .review-quote {
+    font-size: 0.92rem;
+  }
+
+  /* FAQs */
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 0.94rem;
+    gap: 10px;
+  }
+
+  .faq-answer-inner {
+    padding: 0 18px 18px 18px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+
+  /* Sticky Conversion Bar on Mobile */
+  .floating-whatsapp-btn {
+    display: none; /* Hide floating icon on mobile so it doesn't obstruct the bottom conversion bar */
+  }
+
+  .sticky-bottom-bar {
+    padding: 8px 12px;
   }
 
   .sticky-bar-content {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 8px;
   }
 
   .sticky-info {
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .sticky-course-name {
+    font-size: 0.78rem;
+    max-width: 125px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  .sticky-badge {
+    display: none;
+  }
+
+  .sticky-price {
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+
+  .sticky-price span {
+    display: none;
+  }
+
+  .sticky-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .sticky-actions .btn-sm {
+    padding: 7px 11px;
+    font-size: 0.76rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Modals */
+  .modal-dialog {
+    width: calc(100% - 24px);
+    max-height: 88vh;
+    margin: 12px auto;
+  }
+
+  .modal-body {
+    padding: 22px 18px;
+  }
+
+  .modal-header-text h3 {
+    font-size: 1.45rem;
+  }
+
+  .modal-header-text p {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .modal-body {
-    padding: 24px;
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-control {
+    font-size: 16px !important;
+    padding: 11px 14px;
+  }
+
+  .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 }
+
+/* Extra Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .webinar-spec-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-course-name {
+    max-width: 95px;
+  }
+
+  .sticky-actions .btn-sm {
+    padding: 6px 9px;
+    font-size: 0.72rem;
+  }
+
+  .btn-lg {
+    padding: 14px 22px;
+    font-size: 0.94rem;
+  }
+}
+
