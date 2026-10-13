@@ -3,7 +3,7 @@
    Brand Design System matching Official Logo (Plum Purple, Rose Pink, Mint & Gold)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Great+Vibes&family=Noto+Sans+Tamil:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
 :root {
   /* Brand Palette Extracted Directly From Logo */
@@ -36,11 +36,12 @@
   --color-text-muted: #674E61;     /* Soft Muted Plum Grey */
   --color-border: #EDDCE8;         /* Subtle Brand Border */
 
-  /* Fonts */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-script: 'Great Vibes', cursive;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-tamil: 'Noto Sans Tamil', var(--font-sans);
+  /* Modern Premium Aesthetic Typography System */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: var(--font-heading);
+  --font-sans: var(--font-body);
+  --font-tamil: 'Noto Sans Tamil', var(--font-body);
 
   /* Shadows */
   --shadow-sm: 0 2px 10px rgba(94, 39, 80, 0.05);
@@ -123,9 +124,11 @@ input, select, textarea {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   color: var(--color-plum);
   line-height: 1.25;
+  letter-spacing: -0.025em;
+  font-weight: 700;
 }
 
 .text-plum { color: var(--color-plum); }
@@ -248,12 +251,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .brand-name {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
   font-weight: 800;
   color: var(--color-plum);
   line-height: 1.1;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.025em;
 }
 
 .brand-sub {
@@ -312,9 +315,10 @@ h1, h2, h3, h4, h5 {
   gap: 8px;
   padding: 12px 24px;
   border-radius: var(--radius-full);
+  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.92rem;
-  letter-spacing: 0.2px;
+  font-size: 0.94rem;
+  letter-spacing: 0.01em;
   transition: var(--transition-fast);
   text-align: center;
   white-space: nowrap;
@@ -485,20 +489,22 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.12;
   margin-bottom: 20px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.03em;
   color: var(--color-plum);
 }
 
 .hero-title span.brand-highlight {
-  background: linear-gradient(135deg, var(--color-plum) 0%, #D81B60 100%);
+  background: linear-gradient(135deg, #7E2967 0%, #E91E63 55%, #9C27B0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .hero-hook {
@@ -726,11 +732,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .stat-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 800;
   color: var(--color-plum);
   line-height: 1;
+  letter-spacing: -0.02em;
   margin-bottom: 6px;
 }
 
@@ -1026,7 +1033,7 @@ h1, h2, h3, h4, h5 {
   border-radius: 12px;
   background: var(--color-plum-soft);
   color: var(--color-plum);
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.15rem;
   display: flex;
@@ -1271,7 +1278,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .badge-big-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 800;
   color: var(--color-gold);
@@ -1736,7 +1743,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .price-main {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 3.4rem;
   font-weight: 800;
   color: var(--color-plum);
